@@ -1,15 +1,20 @@
 'use client'
-import TextEditor from "./components/Editor";
-
-
+import CodeEditor from "./components/CodeEditor";
+import { ColorModeScript } from '@chakra-ui/react'
+import theme from "./theme";
+import Navbar from "./components/Navbar.jsx"
 
 
 export default function Home() {
 
 
+  
   return (
-    <TextEditor></TextEditor>
-    
+    <>
+<ColorModeScript initialColorMode={theme.config.initialColorMode} />
+    <Navbar></Navbar>
+    <CodeEditor> </CodeEditor>
+    </>
   
   );
 }

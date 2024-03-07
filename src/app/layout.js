@@ -7,10 +7,12 @@ export const metadata = {
   description: "Code in Multiple Human languages",
 };
 
+
+
 export default function RootLayout({ children }) {
   return (
-    <html lang='en'>
-      <body>
+    <html   lang='en'>
+      <body >
         <Providers>{children}</Providers>
       </body>
     </html>
