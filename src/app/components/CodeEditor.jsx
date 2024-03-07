@@ -1,28 +1,45 @@
-import { useRef, useState } from "react";
-import { Box, Flex, Spacer, HStack, VStack } from "@chakra-ui/react";
+import { useRef, useState, useEffect } from "react";
+import { Box, Flex, Spacer, HStack, VStack, Button, LightMode } from "@chakra-ui/react";
 import { Editor } from "@monaco-editor/react";
 import { CODE_SNIPPETS } from "../dictionary/constants";
 import Output from "./Output";
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCopy, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 
 const CodeEditor = () => {
   const editorRef = useRef();
   const [value, setValue] = useState("");
-  const [language, setLanguage] = useState("javascript");
+  const [copied, setCopied] = useState(false);
+  const language= "javascript"
 
   const onMount = (editor) => {
     editorRef.current = editor;
     editor.focus();
   };
 
-  const onSelect = (language) => {
-    setLanguage(language);
-    setValue(CODE_SNIPPETS[language]);
+  const handleCopy = () => {
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+    }, 2000);
   };
+
+  const handleClear = () => {
+    setValue("");
+  };
+
+  useEffect(() => {
+    setValue(CODE_SNIPPETS[language]);
+  }, [language]);
 
   return (
     <Box mt={4}>
-      <VStack p={5} spacing={4}>
+
+<Flex flexWrap="wrap" justifyContent="space-between">
+<Box position="relative" w={{ base: '60%', md: '60%' }} p={5}>
+     
        
           <Editor
             options={{
@@ -32,7 +49,6 @@ const CodeEditor = () => {
             }}
             height="45vh"
             theme="vs-dark"
-            w="90vw"
             language={language}
             defaultValue={CODE_SNIPPETS[language]}
             onMount={onMount}
@@ -40,11 +56,34 @@ const CodeEditor = () => {
             onChange={(value) => setValue(value)}
             
           />
-        <Spacer/>
-        <Box>
-        <Output editorRef={editorRef} language={language} />
+          <Box position="absolute" top={10} right={10} zIndex={2}>
+            <CopyToClipboard text={value} onCopy={handleCopy}>
+            <LightMode>
+              <Button size="sm" colorScheme="light">
+                {copied ? 'Copied!' : <FontAwesomeIcon icon={faCopy} />}
+              </Button>
+              </LightMode>
+            </CopyToClipboard>
+            
+          </Box>
+          <Box position="absolute" bottom={10} right={10} zIndex={2}>
+          <LightMode>
+          <Button size="sm"  colorScheme="red" onClick={handleClear}>
+              <FontAwesomeIcon icon={faTrash} />
+            </Button>
+            </LightMode>
+          </Box>
+          
+         
         </Box>
-      </VStack>
+        <Spacer/>
+        <Box w={{ base: '40%', md: '40%' }} p={5}>
+        <Output editorRef={editorRef} language={language} />
+        
+        </Box>
+        
+        
+     </Flex>
     </Box>
   );
 };

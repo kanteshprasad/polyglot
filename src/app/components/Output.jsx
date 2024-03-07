@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Box, Button, Text, useToast , VStack } from "@chakra-ui/react";
+import { Box, Button, Text, useToast, HStack , VStack , Flex, LightMode, DarkMode} from "@chakra-ui/react";
 import { executeCode } from "../api/api";
+import { color } from "framer-motion";
 
 const Output = ({ editorRef, language }) => {
   const toast = useToast();
@@ -27,37 +28,57 @@ const Output = ({ editorRef, language }) => {
       setIsLoading(false);
     }
   };
-
+   
+  const clearOutput = () => {
+    setOutput(null);
+    setIsError(false);
+  };
   return (
-    <VStack w="100%">
-      <Box>
+    <VStack >
+      <HStack>
       <Button
-        variant="outline"
-        colorScheme="green"
+        style={{ backgroundColor: 'green', color: 'white' }}
         mb={4}
         isLoading={isLoading}
         onClick={runCode}
       >
         Run Code
       </Button>
-      </Box>
       
-      <Box
-          height="50vh"
-          width="80vw"
+      <Button style={{ backgroundColor: 'red', color: 'white' }} mb={4} onClick={clearOutput}>
+          Clear
+        </Button>
+        
+      </HStack>
+      
+      <Box style={{color:"white"}}
+          bgColor="black"
+          height="100%"
+          width="80%"
           p={2}
           color={isError ? "red.400" : ""}
           border="1px solid"
           borderRadius={4}
           borderColor={isError ? "red.500" : "#333"}
+          overflowY="auto"
         >
           {output ? (
-            output.map((line, i) => <Text key={i}>{line}</Text>)
+            output.map((line, i) =>  <Box key={i}>
+            
+            <Flex key={i}>
+        <Text mr={2} color="gray.500">{i + 1}:</Text>
+        <Text>{line}</Text>
+      </Flex>
+          </Box>
+          )
           ) : (
-            <Text>'Click "Run Code" to see the output here'</Text>
+            <Text >1. Click "Run Code" to see the output here</Text>
           )}
         </Box>
+       
+        
     </VStack>
+    
   );
 };
 export default Output;

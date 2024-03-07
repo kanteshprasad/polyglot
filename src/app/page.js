@@ -2,7 +2,7 @@
 import CodeEditor from "./components/CodeEditor";
 import { ColorModeScript } from '@chakra-ui/react'
 import theme from "./theme";
-import Navbar from "./components/Navbar.jsx"
+import Togglemode from "./components/Togglemode"
 
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
 <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-    <Navbar></Navbar>
+    <Togglemode></Togglemode>
     <CodeEditor> </CodeEditor>
     </>
   
