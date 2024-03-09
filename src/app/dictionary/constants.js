@@ -7,6 +7,4 @@ export const LANGUAGE_VERSIONS = {
     php: "8.2.3",
   };
   
-  export const CODE_SNIPPETS = {
-    javascript: `\nfunction greet(name) {\n\tconsole.log("Hello, " + name + "!");\n}\n\ngreet("Alex");\n`,
-  };
+  export const snippet =  `ಆಗಿಸು ಎ = 3;ಆಗಿಸು ಬಿ = 4;ಬರೆಯಿರಿ(ಎ - ಬಿ)`;

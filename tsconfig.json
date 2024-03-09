@@ -5,6 +5,8 @@
       "dom.iterable",
       "esnext"
     ],
+    "target": "es6",
+    "types": ["react"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -27,7 +29,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/app/providers.tsx"  ],
   "exclude": [
     "node_modules"
   ]
