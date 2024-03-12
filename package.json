@@ -24,7 +24,10 @@
     "next": "14.1.2",
     "react": "^18",
     "react-copy-to-clipboard": "^5.1.0",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-simple-keyboard": "^3.7.94",
+    "simple-keyboard": "^3.7.65",
+    "simple-keyboard-layouts": "^3.3.83"
   },
   "devDependencies": {
     "@types/node": "20.11.25",

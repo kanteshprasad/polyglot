@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Box, Button, Text, useToast, HStack , VStack , Flex, LightMode, DarkMode} from "@chakra-ui/react";
+import { Box, Button, Text, useToast, HStack , VStack , Flex, LightMode, DarkMode, Spacer} from "@chakra-ui/react";
 import { executeCode } from "../api/api";
 
-const Output = ({ editorRef, language }) => {
+const Output = ({ editorRef }) => {
   const toast = useToast();
   const [output, setOutput] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -40,31 +40,17 @@ const Output = ({ editorRef, language }) => {
     setIsError(false);
   };
   return (
-    <VStack >
-      <HStack>
-      <Button
-        style={{ backgroundColor: 'green', color: 'white' }}
-        mb={4}
-        isLoading={isLoading}
-        onClick={runCode}
-      >
-        Run Code
-      </Button>
+    <VStack height="100%" >
       
-      <Button style={{ backgroundColor: 'red', color: 'white' }} mb={4} onClick={clearOutput}>
-          Clear
-        </Button>
-        
-      </HStack>
       
       <Box style={{color:"white"}}
           bgColor="black"
           height="100%"
           width="80%"
-          p={2}
+          p={4}
           color={isError ? "red.400" : ""}
           border="1px solid"
-          borderRadius={4}
+         
           borderColor={isError ? "red.500" : "#333"}
           overflowY="auto"
         >
@@ -81,7 +67,21 @@ const Output = ({ editorRef, language }) => {
             <Text >1. Click "Run Code" to see the output here</Text>
           )}
         </Box>
-       
+        <HStack>
+      <Button
+        colorScheme="green"
+        mb={4}
+        isLoading={isLoading}
+        onClick={runCode}
+      >
+        Run Code
+      </Button>
+      
+      <Button  mb={4} onClick={clearOutput}>
+          Clear
+        </Button>
+        
+      </HStack> 
         
     </VStack>
     
