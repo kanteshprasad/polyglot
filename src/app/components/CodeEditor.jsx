@@ -63,7 +63,7 @@ const CodeEditor = () => {
 
   return (
     <>
-      <Flex border="0.5px solid white" width="80vw" mx="10vw" flexWrap="wrap" justifyContent="space-around" mt={4} backgroundColor="black" flexDirection={{ base: "column", md: "row" }}>
+      <Flex id="code-editor" border="0.5px solid white" width="80vw" mx="10vw" flexWrap="wrap" justifyContent="space-around" mt={4} backgroundColor="black" flexDirection={{ base: "column", md: "row" }}>
         <Box width={{ base: "100%", md: "58%" }} ml={{ base: 0, md: "1%" }} p={5} border={2} height="60vh" borderColor="black" position="relative">
           <Editor
             id="codeEditor"
@@ -110,7 +110,7 @@ const CodeEditor = () => {
           <Output editorRef={editorRef} language='javascript' />
         </Box>
       </Flex>
-      <MyKeyboard onChange={handleKeyboardKeyPress} /> {/* Pass the handleKeyboardKeyPress function as a prop */}
+      <MyKeyboard onChange={handleKeyboardKeyPress} /> 
     </>
   );
 };

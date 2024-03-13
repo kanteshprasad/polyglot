@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
       <head>
       <ColorModeScript initialColorMode={theme.config.initialColorMode} />
       </head>
-      <body >
+      <body>
         <Providers>{children}</Providers>
       </body>
     </html>
