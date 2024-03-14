@@ -49,7 +49,7 @@ const MyKeyboard = ({ onChange }) => {
     <Box  ml="10%" width="80%" color="black">
       <DarkMode>
       <Flex justifyContent="space-between">
-  <Button mx={3} my={3} width="30%" bgGradient="linear(to-r, teal.500, green.500)"
+  <Button mx={3} my={3} width="30%" bgGradient="linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%)"
     _hover={{
       bgGradient: "linear(to-r, red.500, yellow.500)",
     }} onClick={onToggle}>Keyboard</Button>
@@ -60,7 +60,7 @@ const MyKeyboard = ({ onChange }) => {
     color="white"
     fontWeight="bold"
     borderRadius="md"
-    bgGradient="linear(to-r, teal.500, green.500)"
+    bgGradient="linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%)"
     _hover={{
       bgGradient: "linear(to-r, red.500, yellow.500)",
     }}
@@ -77,6 +77,7 @@ const MyKeyboard = ({ onChange }) => {
     <option value="odia">ଓଡିଆ</option>
   </Select>
 </Flex>
+
 
       </DarkMode>
       <ScaleFade initialScale={0.9} in={isOpen}>

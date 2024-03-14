@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import { Box, Flex, Spacer, Button, LightMode } from "@chakra-ui/react";
+import { Box, Spacer, Button, LightMode, VStack ,useColorModeValue, Flex } from "@chakra-ui/react";
 import { snippet } from "../dictionary/constants";
 import Output from "./Output";
 import { CopyToClipboard } from 'react-copy-to-clipboard';
@@ -13,6 +13,7 @@ const CodeEditor = () => {
   const [value, setValue] = useState("");
   const [copied, setCopied] = useState(false);
   const theme = "vs-dark";
+const bgColor = useColorModeValue('#509E2F','transparent')
 
   const onMount = (editor) => {
     editorRef.current = editor;
@@ -62,9 +63,9 @@ const CodeEditor = () => {
   }, [snippet]);
 
   return (
-    <>
-      <Flex id="code-editor" border="0.5px solid white" width="80vw" mx="10vw" flexWrap="wrap" justifyContent="space-around" mt={4} backgroundColor="black" flexDirection={{ base: "column", md: "row" }}>
-        <Box width={{ base: "100%", md: "58%" }} ml={{ base: 0, md: "1%" }} p={5} border={2} height="60vh" borderColor="black" position="relative">
+    <Box bg={bgColor}>
+      <VStack  id="code-editor" width="80vw" mx="10vw"   >  
+        <Box width="100%" border={2} height="60vh" borderColor="black" position="relative">
           <Editor
             id="codeEditor"
             options={{
@@ -106,12 +107,12 @@ const CodeEditor = () => {
           </Box>
         </Box>
         <Spacer />
-        <Box width={{ base: "100%", md: "36%" }} ml={{ base: 0, md: "1%" }} mt={{ base: "1%", md: 0 }} p={5}>
+        <Box width="100%" p={3}  >
           <Output editorRef={editorRef} language='javascript' />
         </Box>
-      </Flex>
+      </VStack>
       <MyKeyboard onChange={handleKeyboardKeyPress} /> 
-    </>
+    </Box>
   );
 };
 

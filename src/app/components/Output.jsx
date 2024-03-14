@@ -40,48 +40,46 @@ const Output = ({ editorRef }) => {
     setIsError(false);
   };
   return (
-    <VStack height="100%" >
-      
-      
-      <Box style={{color:"white"}}
-          bgColor="black"
-          height="100%"
-          width="80%"
-          p={4}
-          color={isError ? "red.400" : ""}
-          border="1px solid"
-         
-          borderColor={isError ? "red.500" : "#333"}
-          overflowY="auto"
-        >
-          {output ? (
-            output.map((line, i) =>  <Box key={i}>
-            
-            <Flex key={i}>
-        <Text mr={2} color="gray.500">{i + 1}:</Text>
-        <Text>{line}</Text>
-      </Flex>
-          </Box>
-          )
-          ) : (
-            <Text >1. Click "Run Code" to see the output here</Text>
-          )}
-        </Box>
+    <VStack width="100%" height="100%"  >
         <HStack>
       <Button
-        colorScheme="green"
-        mb={4}
+        colorScheme="orange"
+       
         isLoading={isLoading}
         onClick={runCode}
       >
         Run Code
       </Button>
       
-      <Button  mb={4} onClick={clearOutput}>
+      <Button  onClick={clearOutput}>
           Clear
         </Button>
         
       </HStack> 
+      
+      <Box
+  style={{ color: "white" }}
+  bgColor="grey"
+  height="auto"
+  width="100%"
+  mr={0}
+  color={isError ? "red.400" : ""}
+  borderColor={isError ? "red.500" : "#333"}
+  overflowY="auto"
+>
+  {output ? (
+    output.map((line, i) => (
+      <Box key={i}>
+        <Flex>
+          <Text mr={2} color="black" >{i + 1}: </Text>
+          <Text>{line}</Text>
+        </Flex>
+      </Box>
+    ))
+  ) : null}
+</Box>
+
+      
         
     </VStack>
     

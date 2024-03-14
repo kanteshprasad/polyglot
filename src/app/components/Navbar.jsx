@@ -5,7 +5,11 @@ import { Box, Flex, Link, Button, Input,  useDisclosure, Drawer,
     DrawerHeader,
     DrawerOverlay,
     DrawerContent,
-    DrawerCloseButton, } from "@chakra-ui/react";
+    DrawerCloseButton,
+    LightMode, } from "@chakra-ui/react"; 
+import { HamburgerIcon } from '@chakra-ui/icons'
+
+
 
 const Navbar = () => {
 
@@ -15,14 +19,17 @@ const Navbar = () => {
   return (
 
 
-    <Box pos="sticky" top="0" zIndex="sticky" bg="gray.800" p={4}>
-      <>
-      <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>
-        Open
+    <Flex width="100vw" pos="sticky" top="0" zIndex="sticky" bg="transparent"   position="fixed" p={4}>
+     
+      
+      
+<LightMode></LightMode>
+      <Button ref={btnRef}  onClick={onOpen}>
+      <HamburgerIcon boxSize={8} />
       </Button>
       <Drawer
         isOpen={isOpen}
-        placement='right'
+        placement='left'
         onClose={onClose}
         finalFocusRef={btnRef}
       >
@@ -43,8 +50,8 @@ const Navbar = () => {
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
-    </>
-    </Box>
+  
+    </Flex>
   );
 };
 
