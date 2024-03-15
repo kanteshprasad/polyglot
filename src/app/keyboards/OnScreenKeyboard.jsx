@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import Keyboard from "react-simple-keyboard";
 import "react-simple-keyboard/build/css/index.css";
 import { Box, DarkMode, Select , useDisclosure, ScaleFade, Button, Flex, Spacer } from "@chakra-ui/react";
-import keyboardLayouts from "./layouts";
+import keyboardLayouts from "./keylayouts";
 
 const MyKeyboard = ({ onChange }) => {
   const [selectedLanguage, setSelectedLanguage] = useState("english");

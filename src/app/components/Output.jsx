@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Button, Text, useToast, HStack , VStack , Flex, LightMode, DarkMode, Spacer} from "@chakra-ui/react";
+import { Box, Button, Text, useToast, HStack , VStack , Flex, } from "@chakra-ui/react";
 import { executeCode } from "../api/api";
 
 const Output = ({ editorRef }) => {
@@ -43,7 +43,7 @@ const Output = ({ editorRef }) => {
     <VStack width="100%" height="100%"  >
         <HStack>
       <Button
-        colorScheme="orange"
+        colorScheme="green"
        
         isLoading={isLoading}
         onClick={runCode}

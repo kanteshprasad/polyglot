@@ -1,4 +1,4 @@
-import { useColorMode } from "@chakra-ui/react"
+import { HStack, useColorMode , Text } from "@chakra-ui/react"
 import { Button } from "@chakra-ui/react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
@@ -8,19 +8,21 @@ import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 export default function Togglemode() {
     const { colorMode, toggleColorMode } = useColorMode()
     return (
+    <HStack>
+     
       <Button
-        position="fixed"
-        bottom="2rem"
-        right="2rem"
+        mx={3}
         zIndex="999"
         borderRadius="full"
         p={2}
         onClick={toggleColorMode}
-        size="lg" // Increase button size
+        size="sm" // Increase button size
         border="2px solid"
       >
+         <Text mx={2}> {colorMode === 'light' ? "Dark Mode" : "Light Mode" } </Text>
         <FontAwesomeIcon icon={colorMode === 'light' ? faMoon : faSun } />
         
       </Button>
+      </HStack>
     )
   }

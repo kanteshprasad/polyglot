@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import { Box, Spacer, Button, LightMode, VStack ,useColorModeValue, Flex } from "@chakra-ui/react";
+import { Box, Spacer, Button, LightMode, VStack,Heading  } from "@chakra-ui/react";
 import { snippet } from "../dictionary/constants";
 import Output from "./Output";
 import { CopyToClipboard } from 'react-copy-to-clipboard';
@@ -13,7 +13,6 @@ const CodeEditor = () => {
   const [value, setValue] = useState("");
   const [copied, setCopied] = useState(false);
   const theme = "vs-dark";
-const bgColor = useColorModeValue('#509E2F','transparent')
 
   const onMount = (editor) => {
     editorRef.current = editor;
@@ -63,8 +62,10 @@ const bgColor = useColorModeValue('#509E2F','transparent')
   }, [snippet]);
 
   return (
-    <Box bg={bgColor}>
+    <Box id="playground">
       <VStack  id="code-editor" width="80vw" mx="10vw"   >  
+       <Heading my={10}> Playground </Heading>
+
         <Box width="100%" border={2} height="60vh" borderColor="black" position="relative">
           <Editor
             id="codeEditor"
