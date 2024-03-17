@@ -3,21 +3,12 @@ import { extendTheme  } from '@chakra-ui/react'
 
 // 2. Add your color mode config
 const config = {
-  initialColorMode: "dark",
+  initialColorMode: 'dark',
   useSystemColorMode: false,
 }
 
 
-const theme = extendTheme(  
-  {
-  config,
-
-  colors: {
-    chakra: {
-      "background": "#F1EF99", 
-    },
-  },
-})
+const theme = extendTheme({config})
 
 
 

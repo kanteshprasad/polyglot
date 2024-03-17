@@ -16,7 +16,6 @@ const CodeEditor = () => {
 
   const onMount = (editor) => {
     editorRef.current = editor;
-    editor.focus();
   };
 
   const handleCopy = () => {
@@ -89,6 +88,7 @@ const CodeEditor = () => {
             onMount={onMount}
             value={value}
             onChange={(value) => setValue(value)}
+            overflow= "hidden"
           />
           <Box position="absolute" top={10} right={10} zIndex={2} >
             <LightMode>

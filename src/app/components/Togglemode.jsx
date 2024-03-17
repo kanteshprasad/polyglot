@@ -19,7 +19,6 @@ export default function Togglemode() {
         size="sm" // Increase button size
         border="2px solid"
       >
-         <Text mx={2}> {colorMode === 'light' ? "Dark Mode" : "Light Mode" } </Text>
         <FontAwesomeIcon icon={colorMode === 'light' ? faMoon : faSun } />
         
       </Button>

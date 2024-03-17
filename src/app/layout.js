@@ -14,6 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html   lang='en'>
       <head>
+        <link rel="icon" src="/public/favicon.ico"></link>
       <ColorModeScript initialColorMode={theme.config.initialColorMode} />
       </head>
       <body>

@@ -7,14 +7,20 @@ const Output = ({ editorRef }) => {
   const [output, setOutput] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-  const obj = { ಆಗಿಸು: "let",ಇವಾಗ: "if",ಆದರೂ: "else if",ಅಥವ: "else",ಬರೆಯಿರಿ: "console.log", };
+const obj = new Map([
+  ["ಆಗಿಸು", "let"],
+  ["ಇವಾಗ", "if"],
+  ["ಆದರೂ", "else if"],
+  ["ಅಥವ", "else"],
+  ["ಬರೆಯಿರಿ", "console.log"]
+]);
 
-  const runCode = async () => {
-    const objKeys = new Set(Object.keys(obj));
+const runCode = async () => {
+  const objKeys = new Set(obj.keys());
 
-    const inputCode = editorRef.current.getValue();
-    const inputArray = inputCode.split(/([[\]{}(),;\s+=\-*])/);
-    const sourceCode = inputArray.map(elem => objKeys.has(elem) ? obj[elem] : elem).join('');
+  const inputCode = editorRef.current.getValue();
+  const inputArray = inputCode.split(/([[\]{}(),;\s+=\-*])/);
+  const sourceCode = inputArray.map(elem => objKeys.has(elem) ? obj.get(elem) : elem).join('');
 
     if (!sourceCode) return;
     try {
