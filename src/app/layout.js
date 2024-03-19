@@ -3,6 +3,7 @@ import { Providers } from './providers.tsx'
 import { ColorModeScript } from '@chakra-ui/react'
 import theme from "./theme";
 
+
 export const metadata = {
   title: "Polyglot",
   description: "Code in Native Indian languages",

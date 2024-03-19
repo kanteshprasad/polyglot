@@ -1,12 +1,13 @@
 import React, { useRef, useState, useEffect } from "react";
-import { Box, Spacer, Button, LightMode, VStack,Heading  } from "@chakra-ui/react";
+import { Box, Spacer, Button, LightMode, VStack,Heading, Flex, Text, HStack, Center } from "@chakra-ui/react";
 import { snippet } from "../dictionary/constants";
 import Output from "./Output";
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCopy, faTrash } from '@fortawesome/free-solid-svg-icons';
+import {  faTrash } from '@fortawesome/free-solid-svg-icons';
 import Editor from '@monaco-editor/react';
-import MyKeyboard from '../keyboards/OnScreenKeyboard'; // Import the MyKeyboard component
+import MyKeyboard from '../keyboards/OnScreenKeyboard'; 
+import HorizontalSeparator from "./Seperator.jsx"
 
 const CodeEditor = () => {
   const editorRef = useRef();
@@ -61,11 +62,39 @@ const CodeEditor = () => {
   }, [snippet]);
 
   return (
-    <Box id="playground">
-      <VStack  id="code-editor" width="80vw" mx="10vw"   >  
+    <Box id="playground" > 
+    <Center>
        <Heading my={10}> Playground </Heading>
+    
+       </Center>
+       <HorizontalSeparator/>
+      <Flex mt={5} id="code-editor" width="80vw" mx="10vw" direction={{ base: "column", md: "row", lg: "row" }}  >  
+   
+      
 
         <Box width="100%" border={2} height="60vh" borderColor="black" position="relative">
+
+
+    
+         <HStack my={2} width="100%"  justifyContent="center"  >
+         
+          <CopyToClipboard text={value} onCopy={handleCopy}>
+                <Button colorScheme="blue"  size="md" >
+                  {copied ? 'Copied!' : <Text>Copy</Text>}
+                </Button>
+              </CopyToClipboard>
+
+              <Button  colorScheme="red" onClick={handleClear}>
+              <Text mx={1} >Clear</Text>  <FontAwesomeIcon icon={faTrash} /> 
+              </Button>    
+
+              </HStack>   
+      
+        
+            
+              
+            
+              
           <Editor
             id="codeEditor"
             options={{
@@ -81,7 +110,7 @@ const CodeEditor = () => {
               renderValidationDecorations: "off",
               glyphMargin: false
             }}
-            height="100%"
+            height="80%"
             theme={theme}
             language="javascript"
             defaultValue={snippet}
@@ -90,28 +119,16 @@ const CodeEditor = () => {
             onChange={(value) => setValue(value)}
             overflow= "hidden"
           />
-          <Box position="absolute" top={10} right={10} zIndex={2} >
-            <LightMode>
-              <CopyToClipboard text={value} onCopy={handleCopy}>
-                <Button colorScheme="blue"  size="sm" >
-                  {copied ? 'Copied!' : <FontAwesomeIcon icon={faCopy} />}
-                </Button>
-              </CopyToClipboard>
-            </LightMode>
-          </Box>
-          <Box position="absolute" bottom={10} right={10} zIndex={2}>
-            <LightMode>
-              <Button size="sm" colorScheme="red" onClick={handleClear}>
-                <FontAwesomeIcon icon={faTrash} />
-              </Button>
-            </LightMode>
-          </Box>
+        
+         
+      
+          
         </Box>
         <Spacer />
         <Box width="100%" p={3}  >
           <Output editorRef={editorRef} language='javascript' />
         </Box>
-      </VStack>
+      </Flex>
       <MyKeyboard onChange={handleKeyboardKeyPress} /> 
     </Box>
   );

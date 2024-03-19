@@ -8,7 +8,7 @@ import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 export default function Togglemode() {
     const { colorMode, toggleColorMode } = useColorMode()
     return (
-    <HStack>
+    <HStack >
      
       <Button
         mx={3}

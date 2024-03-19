@@ -7,4 +7,4 @@ export const LANGUAGE_VERSIONS = {
     php: "8.2.3",
   };
   
-  export const snippet =  `\n \n ಆಗಿಸು ಎ = 3;ಆಗಿಸು ಬಿ = 4;ಬರೆಯಿರಿ(ಎ - ಬಿ)`;
+  export const snippet =  `\n \n ಆಗಿಸು ಎ = 3; \n  ಆಗಿಸು ಬಿ = 4;\n ಬರೆಯಿರಿ(ಎ - ಬಿ)`;
