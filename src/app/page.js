@@ -4,10 +4,12 @@ import ScrollProgressBar from "./components/ScrollProgressBar.jsx"
 import Documentation from './components/Documentation/Documentation'
 import Navbar from "./components/Navbar"
 import Hero from "./components/Hero"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function Home() {
   return (
     <>
+      <SpeedInsights/>
       <ScrollProgressBar></ScrollProgressBar>
       <Navbar/>
       <Hero/>
