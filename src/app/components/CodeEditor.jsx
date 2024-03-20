@@ -17,6 +17,7 @@ const CodeEditor = () => {
 
   const onMount = (editor) => {
     editorRef.current = editor;
+    editor.focus();
   };
 
   const handleCopy = () => {
@@ -121,7 +122,7 @@ const CodeEditor = () => {
             onChange={(value) => setValue(value)}
             overflow= "hidden"
           />
-        
+         
          
       
           
