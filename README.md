@@ -1,36 +1,274 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Polyglot ##
 
-## Getting Started
+ **The playground translates the user provided code into valid Javascript code and then evaluates it externally through Piston Api ( https://piston.readthedocs.io/en/latest/api-v2/ ) **
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**This Code Playground operates by translating code written in your preferred language into JavaScript. You can write code in multiple languages within a single execution. Below are the fundamental rules governing the translation process. As of now, only these keywords are supported:**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+| Kannada  | JavaScript |
+|----------|------------|
+| ಆಗಿಸು     | let        |
+| ಸ್ಥಿರ      | const      |
+| ಇವಾಗ      | if         |
+| ಆದರೂ      | else if    |
+| ಅಥವ       | else       |
+| ಬರೆಯಿರಿ    | console.log |
+| ನಿಲ್ಲಿಸು    | break      |
+| ಮುಂದುವರಿಸಿ | continue   |
+| ನಿಜ        | true       |
+| ಸುಳ್ಳು     | false      |
+| ಸಮಯದಲ್ಲಿ   | while      |
+| ಮಾಡು       | do         |
+| ಪ್ರತಿ      | for        |
+| ಒಳಗೆ       | in         |
+| ಶೂನ್ಯ      | null       |
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+| Telugu   | JavaScript |
+|----------|------------|
+| వీలు      | let        |
+| స్థిరమైన   | const      |
+| ఇప్పుడు     | if         |
+| అయినప్పటికీ | else if    |
+| లేకపోతే    | else       |
+| వ్రాయు      | console.log |
+| కొనసాగించు  | continue   |
+| ఆపండి      | break      |
+| నిజం       | true       |
+| అబద్ధం     | false      |
+| అయితే      | while      |
+| చేయు       | do         |
+| కోసం       | for        |
+| లో         | in         |
+| శూన్య       | null       |
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+| Tamil   | JavaScript |
+|---------|------------|
+| விடு     | let        |
+| நிலையான  | const      |
+| என்றால்  | if         |
+| கூட      | else if    |
+| வேறு     | else       |
+| எழுது    | console.log |
+| தொடரவும் | continue   |
+| நிறுத்து  | break      |
+| உண்மை     | true       |
+| பொய்     | false      |
+| போது    | while      |
+| செய்     | do         |
+| க்கான    | for        |
+| உள்ளே    | in         |
+| ஏதுமில்லை | null       |
 
-## Learn More
+| Odia    | JavaScript |
+|---------|------------|
+| ଚାଲ     | let        |
+| ସ୍ଥିର    | const      |
+| ଯଦି     | if         |
+| ଯଦିଓ    | else if    |
+| ଅନ୍ୟ     | else       |
+| ଲେଖ     | console.log |
+| ବ୍ରେକ୍   | break      |
+| ଯାଅ     | continue   |
+| ସତ      | true       |
+| ମିଥ୍ୟା   | false      |
+| ଯେତେବେଳେ | while      |
+| କର      | do         |
+| ପାଇଁ    | for        |
+| ଭିତରେ    | in         |
+| ଶୂନ୍ୟ    | null       |
 
-To learn more about Next.js, take a look at the following resources:
+| Hindi   | JavaScript |
+|---------|------------|
+| हो       | let        |
+| स्थिर     | const      |
+| अगर      | if         |
+| और       | else if    |
+| अन्य      | else       |
+| लिखो     | console.log |
+| विराम    | break      |
+| जारी     | continue   |
+| सत्य      | true       |
+| असत्य     | false      |
+| जबकि     | while      |
+| करना     | do         |
+| लिए      | for        |
+| में       | in         |
+| शून्य     | null       |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Punjabi | JavaScript |
+|---------|------------|
+| ਚਲੋ      | let        |
+| ਸਥਿਰ     | const      |
+| ਜੇਕਰ     | if         |
+| ਵੀ      | else if    |
+| ਹੋਰ      | else       |
+| ਲਿਖੋ     | console.log |
+| ਵਿਰਾਮ    | break      |
+| ਜਾਰੀ     | continue   |
+| ਸੱਚ      | true       |
+| ਝੂਠਾ     | false      |
+| ਜਦਕਿ     | while      |
+| ਕਰਦੇ     | do         |
+| ਲਈ      | for        |
+| ਵਿੱਚ     | in         |
+| ਜ਼ੀਰੋ     | null       |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+## Snippets ##
+
+**Kannada**
+// ಸಂಖ್ಯೆಗಳ ಮಾದರಿ ಶ್ರೇಣಿ
+ಸ್ಥಿರ ಸಂಖ್ಯೆಗಳು = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// ರಚನೆಯ ಮೂಲಕ ಪುನರಾವರ್ತನೆ
+ಪ್ರತಿ (ಆಗಿಸು i = 0; i < ಸಂಖ್ಯೆಗಳು.length; i++) {
+   // ಸಮ ಸಂಖ್ಯೆ ಇದೆಯೇ ಎಂದು ಪರಿಶೀಲಿಸಿ
+   ಇವಾಗ (ಸಂಖ್ಯೆಗಳು[i] % 2 === 0) {
+       ಬರೆಯಿರಿ(ಸಂಖ್ಯೆಗಳು[i] + " ಇದು ಸಮ ಸಂಖ್ಯೆಯಾಗಿದೆ");
+       // ಲೂಪ್ ದೇಹದ ಉಳಿದ ಭಾಗವನ್ನು ಬಿಟ್ಟು ಮುಂದಿನ ಪುನರಾವರ್ತನೆಗೆ ಸರಿಸಿ
+       ಮುಂದುವರಿಸಿ;
+   }
+
+   // ಸಂಖ್ಯೆ 5 ಕ್ಕಿಂತ ಹೆಚ್ಚಿದೆಯೇ ಎಂದು ಪರಿಶೀಲಿಸಿ
+   ಇವಾಗ (ಸಂಖ್ಯೆಗಳು[i] > 5) {
+       ಬರೆಯಿರಿ(ಸಂಖ್ಯೆಗಳು[i] + " 5 ಕ್ಕಿಂತ ಹೆಚ್ಚಾಗಿರುತ್ತದೆ.");
+       // ಸಂಖ್ಯೆ 5 ಕ್ಕಿಂತ ಹೆಚ್ಚಿದ್ದರೆ ಲೂಪ್‌ನಿಂದ ನಿರ್ಗಮಿಸಿ
+       ನಿಲ್ಲಿಸು;
+   }
+
+   // ಯಾವುದೇ ಷರತ್ತುಗಳನ್ನು ಪೂರೈಸದಿದ್ದರೆ, ಸಂಖ್ಯೆಯನ್ನು ಮುದ್ರಿಸಿ
+   ಬರೆಯಿರಿ(ಸಂಖ್ಯೆಗಳು[i]);
+}
+
+**Hindi**
+
+स्थिर संख्या = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// संरचना के माध्यम से पुनरावृत्ति
+लिए (हो i = 0; i < संख्या.length; i++) {
+   // जांचें कि क्या कोई सम संख्या है
+   अगर (संख्या[i] % 2 === 0) {
+       लिखो(संख्या[i] + " यह एक सम संख्या है");
+       // शेष लूप बॉडी को छोड़ें और अगले पुनरावृत्ति पर जाएँ
+ जारी;
+   }
+
+   // जांचें कि क्या संख्या 5 से अधिक है
+   अगर (संख्या[i] > 5) {
+       लिखो(संख्या[i] + " 5 से बड़ा है.");
+       // यदि संख्या 5 से अधिक है तो लूप से बाहर निकलें
+       विराम;
+   }
+
+   // यदि कोई भी शर्त पूरी नहीं होती है, तो नंबर प्रिंट करें
+   लिखो(संख्या[i]);
+}
+
+**Telugu**
+
+// సంఖ్యల నమూనా శ్రేణి
+స్థిరమైన సంఖ్యలు = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// శ్రేణి ద్వారా పునరావృతం
+ కోసం (వీలు i = 0; i < సంఖ్యలు.length; i++) {
+   // సంఖ్య సమానంగా ఉందో లేదో తనిఖీ చేయండి
+   ఇప్పుడు (సంఖ్యలు[i] % 2 === 0) {
+       వ్రాయు(సంఖ్యలు[i] + " సమానంగా ఉంది.");
+       // మిగిలిన లూప్ బాడీని దాటవేసి, తదుపరి దానికి తరలించండి
+       కొనసాగించు;
+   }
+
+   // సంఖ్య 5 కంటే ఎక్కువగా ఉందో లేదో తనిఖీ చేయండి
+   ఇప్పుడు (సంఖ్యలు[i] > 5) {
+       వ్రాయు(సంఖ్యలు[i] + " 5 కంటే ఎక్కువ.");
+       // సంఖ్య 5 కంటే ఎక్కువ ఉంటే లూప్ నుండి నిష్క్రమించండి
+       ఆపండి;
+   }
+
+   // రెండు షరతులు నెరవేరకపోతే, నంబర్‌ను ప్రింట్ చేయండి
+   వ్రాయు(సంఖ్యలు[i]);
+}
+
+
+**Punjabi**
+
+// ਸੰਖਿਆਵਾਂ ਦਾ ਨਮੂਨਾ ਐਰੇ
+ਸਥਿਰ ਨੰਬਰ = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// ਐਰੇ ਰਾਹੀਂ ਦੁਹਰਾਇਆ ਜਾ ਰਿਹਾ ਹੈ
+ਲਈ (ਚਲੋ i = 0; i < ਨੰਬਰ.length; i++) {
+   // ਜਾਂਚ ਕਰੋ ਕਿ ਕੀ ਨੰਬਰ ਬਰਾਬਰ ਹੈ
+   ਜੇਕਰ (ਨੰਬਰ[i] % 2 === 0) {
+       ਲਿਖੋ(ਨੰਬਰ[i] + " ਬਰਾਬਰ ਹੈ।");
+       // ਲੂਪ ਬਾਡੀ ਦੇ ਬਾਕੀ ਹਿੱਸੇ ਨੂੰ ਛੱਡੋ ਅਤੇ ਅਗਲੇ ਇਸ 'ਤੇ ਜਾਓ
+       ਜਾਰੀ;
+   }
+
+   // ਜਾਂਚ ਕਰੋ ਕਿ ਕੀ ਸੰਖਿਆ 5 ਤੋਂ ਵੱਧ ਹੈ
+   ਜੇਕਰ (ਨੰਬਰ[i] > 5) {
+       ਲਿਖੋ(ਨੰਬਰ[i] + " 5 ਤੋਂ ਵੱਧ ਹੈ।.");
+       // ਲੂਪ ਤੋਂ ਬਾਹਰ ਨਿਕਲੋ ਜੇਕਰ ਸੰਖਿਆ 5 ਤੋਂ ਵੱਧ ਹੈ
+       ਵਿਰਾਮ;
+   }
+
+   // ਜੇਕਰ ਕੋਈ ਵੀ ਸ਼ਰਤ ਪੂਰੀ ਨਹੀਂ ਹੁੰਦੀ ਹੈ, ਤਾਂ ਨੰਬਰ ਪ੍ਰਿੰਟ ਕਰੋ
+   ਲਿਖੋ(ਨੰਬਰ[i]);
+} 
+
+
+**Tamil**
+
+// வரிசையின் மூலம் திரும்புதல்
+க்கான (விடு i = 0; i < எண்கள்.length; i++) {
+   // எண் சமமாக உள்ளதா என சரிபார்க்கவும்
+   என்றால் (எண்கள்[i] % 2 === 0) {
+       எழுது(எண்கள்[i] + " சமமாக உள்ளது.");
+       // மீதமுள்ள லூப் பாடியைத் தவிர்த்துவிட்டு அடுத்ததாக நகர்த்தவும்
+       தொடரவும்;
+   }
+
+   // எண் 5 ஐ விட அதிகமாக உள்ளதா என சரிபார்க்கவும்
+   என்றால் (எண்கள்[i] > 5) {
+       எழுது(எண்கள்[i] + " 5 ஐ விட அதிகமாக உள்ளது.");
+       // எண் 5 ஐ விட அதிகமாக இருந்தால் வளையத்திலிருந்து வெளியேறவும்
+       நிறுத்து;
+   }
+
+   // எந்த நிபந்தனையும் பூர்த்தி செய்யப்படாவிட்டால், எண்ணை அச்சிடவும்
+   எழுது(எண்கள்[i]);
+} 
+
+
+
+**Odia**
+
+// ସଂଖ୍ୟାଗୁଡ଼ିକର ନମୁନା ଆରେ | 
+ସ୍ଥିର ସଂଖ୍ୟାଗୁଡିକ = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// ଆରେ ମାଧ୍ୟମରେ ପୁନରାବୃତ୍ତି |
+ପାଇଁ (ଚାଲ i = 0; i < ସଂଖ୍ୟାଗୁଡିକ.length; i++) {
+   // ସଂଖ୍ୟାଟି ଅଛି କି ନାହିଁ ଯାଞ୍ଚ କରନ୍ତୁ |
+   ଯଦି (ସଂଖ୍ୟାଗୁଡିକ[i] % 2 === 0) {
+       ଲେଖ(ସଂଖ୍ୟାଗୁଡିକ[i] + " ଏପରିକି");
+       // ବାକି ଲୁପ୍ ବଡି ଛାଡି ପରବର୍ତ୍ତୀ ପୁନରାବୃତ୍ତି କୁ ଯାଆନ୍ତୁ |
+       ଯାଅ;
+   }
+
+   // ସଂଖ୍ୟା 5 ରୁ ଅଧିକ କି ନାହିଁ ଯାଞ୍ଚ କରନ୍ତୁ |
+   ଯଦି (ସଂଖ୍ୟାଗୁଡିକ[i] > 5) {
+       ଲେଖ(ସଂଖ୍ୟାଗୁଡିକ[i] + " 5 ରୁ ଅଧିକ ଅଟେ |");
+       // ସଂଖ୍ୟା 5 ରୁ ଅଧିକ ହେଲେ ଲୁପ୍ ଛାଡନ୍ତୁ |
+       ବ୍ରେକ୍;
+   }
+
+   // ଯଦି କ condition ଣସି ସର୍ତ୍ତ ପୂରଣ ହୁଏ ନାହିଁ, ସଂଖ୍ୟା ପ୍ରିଣ୍ଟ୍ କରନ୍ତୁ |
+   ଲେଖ(ସଂଖ୍ୟାଗୁଡିକ[i]);
+} 
+
+
+
+**Copy Paste any of the Above Snippets in the playground and see the output**
