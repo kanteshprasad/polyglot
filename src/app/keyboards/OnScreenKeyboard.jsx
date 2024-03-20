@@ -49,10 +49,6 @@ const MyKeyboard = ({ onChange }) => {
     <Box  ml="10%" width="80%" color="black">
       <DarkMode>
       <Flex justifyContent="space-between">
-  <Button mx={3} my={3} width="30%" bgGradient="linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%)"
-    _hover={{
-      bgGradient: "linear(to-r, red.500, yellow.500)",
-    }} onClick={onToggle}>Keyboard</Button>
     
   <Select
   mx={3}
@@ -64,23 +60,23 @@ const MyKeyboard = ({ onChange }) => {
     _hover={{
       bgGradient: "linear(to-r, red.500, yellow.500)",
     }}
-    width="70%" // Adjusted width to 70%
+    width="100%" // Adjusted width to 70%
     value={selectedLanguage}
     onChange={handleLanguageChange}
   >
     <option value="english">Select Language</option>
-    <option value="kannada">ಕನ್ನಡ</option>
-    <option value="hindi">हिंदी</option>
-    <option value="tamil"> தமிழ்</option>
-    <option value="telugu">తెలుగు</option>
-    <option value="punjabi">ਪੰਜਾਬੀ</option>
-    <option value="odia">ଓଡିଆ</option>
+    <option value="kannada">ಕನ್ನಡ -- Kannada</option>
+    <option value="hindi">हिंदी -- Hindi</option>
+    <option value="tamil"> தமிழ் -- Tamil</option>
+    <option value="telugu">తెలుగు -- Telugu</option>
+    <option value="punjabi">ਪੰਜਾਬੀ -- Punjabi</option>
+    <option value="odia">ଓଡିଆ --  Odia</option>
   </Select>
 </Flex>
 
 
       </DarkMode>
-      <ScaleFade initialScale={0.9} in={isOpen}>
+     
       <Keyboard
         keyboardRef={(r) => (keyboard.current = r)}
         layoutName={layoutName}
@@ -89,7 +85,7 @@ const MyKeyboard = ({ onChange }) => {
         color="black"
         className="custom-keyboard"
       />
-      </ScaleFade>
+     
     </Box>
   );
 };

@@ -62,22 +62,6 @@ const CodeEditor = () => {
   }, [snippet]);
 
 
-// Check for Unwanted entry in mobile devices, remove if not solved.
-  useEffect(() => {
-    const handleBeforeInput = (event) => {
-      const allowedCharacters = /^[a-zA-Z0-9!@#$%^&*(),.?":{}|<>+\-=\[\]\\\/\s]*$/;
-
-      if (!event.data.match(allowedCharacters)) {
-        event.preventDefault();
-      }
-    };
-
-    window.addEventListener("beforeinput", handleBeforeInput);
-
-    return () => {
-      window.removeEventListener("beforeinput", handleBeforeInput);
-    };
-  }, []);
 
   return (
     <Box id="playground" > 
