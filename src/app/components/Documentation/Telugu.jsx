@@ -11,13 +11,13 @@ import {
   TableCaption,
   TableContainer,
 } from '@chakra-ui/react'
-export default function Kannada() {
+export default function Telugu() {
 
 
 
   return (
 
-    <Box id='kannadaDoc' maxWidth='80vw' ml='10vw' my={10} >
+    <Box id='teluguDoc' maxWidth='80vw' ml='10vw' my={10} >
       
 
       <VStack width='80%' ml='10%'  >
@@ -25,7 +25,7 @@ export default function Kannada() {
 
         <Box>
           <Center>
-            <Heading my={12} > ಕನ್ನಡ  -- Kannada </Heading>
+            <Heading my={12} > తెలుగు  -- Telugu </Heading>
           </Center>
           <VStack width="100%" alignItems='center' gap={3} >
             
@@ -43,84 +43,84 @@ export default function Kannada() {
                   <Tbody>
                     <Tr>
                       <Td>let</Td>
-                      <Td>ಆಗಿಸು</Td>
+                      <Td>వీలు</Td>
 
                     </Tr>
                     <Tr>
                       <Td>const</Td>
-                      <Td>ಸ್ಥಿರ</Td>
+                      <Td>స్థిరమైన</Td>
 
                     </Tr>
                     <Tr>
                       <Td>if</Td>
-                      <Td>ಇವಾಗ</Td>
+                      <Td>ఇప్పుడు</Td>
 
                     </Tr>
 
                     <Tr>
                       <Td>else if</Td>
-                      <Td>ಆದರೂ</Td>
+                      <Td>అయినప్పటికీ</Td>
 
                     </Tr>
                     <Tr>
                       <Td>else</Td>
-                      <Td>ಅಥವ</Td>
+                      <Td>లేకపోతే</Td>
 
                     </Tr>
                     <Tr>
                       <Td>console.log</Td>
-                      <Td>ಬರೆಯಿರಿ</Td>
+                      <Td>వ్రాయు</Td>
 
                     </Tr>
                     <Tr>
                       <Td>break</Td>
-                      <Td>ನಿಲ್ಲಿಸು</Td>
+                      <Td>ఆపండి</Td>
 
                     </Tr>
                     <Tr>
                       <Td>continue</Td>
-                      <Td>ಮುಂದುವರಿಸಿ</Td>
+                      <Td>కొనసాగించు</Td>
 
                     </Tr>
                     <Tr>
                       <Td>true</Td>
-                      <Td>ನಿಜ</Td>
+                      <Td>నిజం</Td>
 
                     </Tr>
                     <Tr>
 
                       <Td>false</Td>
-                      <Td>ಸುಳ್ಳು</Td>
+                      <Td>అబద్ధం</Td>
 
                     </Tr>
                     <Tr>
                       <Td>while</Td>
-                      <Td>ಸಮಯದಲ್ಲಿ</Td>
+                      <Td>అయితే</Td>
 
                     </Tr>
                     <Tr>
                       <Td>do</Td>
-                      <Td>ಮಾಡು</Td>
+                      <Td>చేయు</Td>
 
                     </Tr>
                     <Tr>
                       <Td>for</Td>
-                      <Td>ಪ್ರತಿ</Td>
+                      <Td>కోసం</Td>
 
                     </Tr>
                     <Tr>
                       <Td>in</Td>
-                      <Td>ಒಳಗೆ</Td>
+                      <Td>లో</Td>
 
                     </Tr>
                     <Tr>
                       <Td>finally</Td>
-                      <Td>ಅಂತಿಮವಾಗಿ</Td>
+                      <Td>చివరకు</Td>
 
                     </Tr>
                     <Tr>
                       <Td>null</Td>
-                      <Td>ಶೂನ್ಯ</Td>
+                      <Td>శూన్య</Td>
 
                     </Tr>
 
@@ -137,7 +137,7 @@ export default function Kannada() {
              <Box ml='10vw' width='80vw'>
               <Text fontSize="30" fontWeight='600' my={4} > Example Snippet </Text>
               <pre style={{ overflowX: 'auto', overflowY: 'auto',  maxWidth: '90%' }}>
-                {"\n// ಸಂಖ್ಯೆಗಳ ಮಾದರಿ ಶ್ರೇಣಿ\nಸ್ಥಿರ ಸಂಖ್ಯೆಗಳು = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];\n\n// ರಚನೆಯ ಮೂಲಕ ಪುನರಾವರ್ತನೆ\nಪ್ರತಿ (ಆಗಿಸು i = 0; i < ಸಂಖ್ಯೆಗಳು.length; i++) {\n   // ಸಮ ಸಂಖ್ಯೆ ಇದೆಯೇ ಎಂದು ಪರಿಶೀಲಿಸಿ\n   ಇವಾಗ (ಸಂಖ್ಯೆಗಳು[i] % 2 === 0) {\n       ಬರೆಯಿರಿ(ಸಂಖ್ಯೆಗಳು[i] + \" ಇದು ಸಮ ಸಂಖ್ಯೆಯಾಗಿದೆ\");\n       // ಲೂಪ್ ದೇಹದ ಉಳಿದ ಭಾಗವನ್ನು ಬಿಟ್ಟು ಮುಂದಿನ ಪುನರಾವರ್ತನೆಗೆ ಸರಿಸಿ\n       ಮುಂದುವರಿಸಿ;\n   }\n\n   // ಸಂಖ್ಯೆ 5 ಕ್ಕಿಂತ ಹೆಚ್ಚಿದೆಯೇ ಎಂದು ಪರಿಶೀಲಿಸಿ\n   ಇವಾಗ (ಸಂಖ್ಯೆಗಳು[i] > 5) {\n       ಬರೆಯಿರಿ(ಸಂಖ್ಯೆಗಳು[i] + \" 5 ಕ್ಕಿಂತ ಹೆಚ್ಚಾಗಿರುತ್ತದೆ.\");\n       // ಸಂಖ್ಯೆ 5 ಕ್ಕಿಂತ ಹೆಚ್ಚಿದ್ದರೆ ಲೂಪ್‌ನಿಂದ ನಿರ್ಗಮಿಸಿ\n       ನಿಲ್ಲಿಸು;\n   }\n\n   // ಯಾವುದೇ ಷರತ್ತುಗಳನ್ನು ಪೂರೈಸದಿದ್ದರೆ, ಸಂಖ್ಯೆಯನ್ನು ಮುದ್ರಿಸಿ\n   ಬರೆಯಿರಿ(ಸಂಖ್ಯೆಗಳು[i]);\n}\n\n"}
+                {"\n// సంఖ్యల నమూనా శ్రేణి\nస్థిరమైన సంఖ్యలు = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];\n\n// శ్రేణి ద్వారా పునరావృతం\n కోసం (వీలు i = 0; i < సంఖ్యలు.length; i++) {\n   // సంఖ్య సమానంగా ఉందో లేదో తనిఖీ చేయండి\n   ఇప్పుడు (సంఖ్యలు[i] % 2 === 0) {\n       వ్రాయు(సంఖ్యలు[i] + \" సమానంగా ఉంది.\");\n       // మిగిలిన లూప్ బాడీని దాటవేసి, తదుపరి దానికి తరలించండి\n       కొనసాగించు;\n   }\n\n   // సంఖ్య 5 కంటే ఎక్కువగా ఉందో లేదో తనిఖీ చేయండి\n   ఇప్పుడు (సంఖ్యలు[i] > 5) {\n       వ్రాయు(సంఖ్యలు[i] + \" 5 కంటే ఎక్కువ.\");\n       // సంఖ్య 5 కంటే ఎక్కువ ఉంటే లూప్ నుండి నిష్క్రమించండి\n       ఆపండి;\n   }\n\n   // రెండు షరతులు నెరవేరకపోతే, నంబర్‌ను ప్రింట్ చేయండి\n   వ్రాయు(సంఖ్యలు[i]);\n}\n\n"}
               </pre>
               </Box>
             

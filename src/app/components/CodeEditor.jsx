@@ -61,6 +61,24 @@ const CodeEditor = () => {
     setValue(snippet);
   }, [snippet]);
 
+
+// Check for Unwanted entry in mobile devices, remove if not solved.
+  useEffect(() => {
+    const handleBeforeInput = (event) => {
+      const allowedCharacters = /^[a-zA-Z0-9!@#$%^&*(),.?":{}|<>+\-=\[\]\\\/\s]*$/;
+
+      if (!event.data.match(allowedCharacters)) {
+        event.preventDefault();
+      }
+    };
+
+    window.addEventListener("beforeinput", handleBeforeInput);
+
+    return () => {
+      window.removeEventListener("beforeinput", handleBeforeInput);
+    };
+  }, []);
+
   return (
     <Box id="playground" > 
     <Center>
@@ -72,7 +90,7 @@ const CodeEditor = () => {
    
       
 
-        <Box width="100%" border={2} height="60vh" borderColor="black" position="relative">
+        <Box width={{ base: "100%", md: "70%", lg: "70%" }} border={2} height="60vh" borderColor="black" position="relative">
 
 
     
@@ -125,7 +143,7 @@ const CodeEditor = () => {
           
         </Box>
         <Spacer />
-        <Box width="100%" p={3}  >
+        <Box width={{ base: "100%", md: "30%", lg: "30%" }} p={3}  >
           <Output editorRef={editorRef} language='javascript' />
         </Box>
       </Flex>

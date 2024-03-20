@@ -5,6 +5,7 @@ import Documentation from './components/Documentation/Documentation'
 import Navbar from "./components/Navbar"
 import Hero from "./components/Hero"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import Footer from './components/Footer'
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
     
       <CodeEditor />
       <Documentation/>
+      <Footer/>
     </>
   );
 }
