@@ -1,10 +1,5 @@
 import React from "react";
-import {  Flex,    Menu, 
-  MenuButton,
-  MenuList,
-  MenuItem, Button, MenuGroup , DarkMode } from "@chakra-ui/react"; 
-
-import { GiHamburgerMenu } from "react-icons/gi";
+import {  Flex,   Link } from "@chakra-ui/react"; 
 
 const Navbar = () => {
 
@@ -20,26 +15,17 @@ const Navbar = () => {
       top="0"
       zIndex="900"
       position="fixed"
+      flexDirection='row'
       p={4}
     >
       
-        
+      <ul style={{display:'flex'}}>
+          <li><a onClick={() => handleNavigation('/')}>Home</a></li>
+          <li><a onClick={() => handleNavigation('/about')}>About</a></li>
+          <li><a onClick={() => handleNavigation('/documentation')}>Documentation</a></li>
+        </ul>
     
-          <Menu>
-            <MenuButton as={Button} > <GiHamburgerMenu /> </MenuButton>
-            <MenuList>
-          <MenuItem as='a' href="#home">Home</MenuItem>
-          <MenuItem as='a' href="#playground">Playground</MenuItem>
-         <MenuGroup title="Documentation  &#11167;">
-          <MenuItem as='a' href='#kannadaDoc'>Kannada</MenuItem>
-          <MenuItem as='a' href='#punjabiDoc'>Punjabi</MenuItem>
-          <MenuItem as='a' href='#hindiDoc'>Hindi</MenuItem>
-          <MenuItem as='a' href='#tamilDoc'>Tamil</MenuItem>
-          <MenuItem as='a' href='#teluguDoc'>Telugu</MenuItem>
-          <MenuItem as='a' href='#odiaDoc'>Odia</MenuItem>
-          </MenuGroup>
-            </MenuList>
-          </Menu>
+         
             
          
      

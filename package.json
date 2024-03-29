@@ -17,7 +17,6 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@monaco-editor/react": "^4.6.0",
     "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.10",
     "axios": "^1.6.7",
@@ -32,10 +31,7 @@
     "react-icons": "^5.0.1",
     "react-scroll": "^1.9.0",
     "react-simple-code-editor": "^0.13.1",
-    "react-simple-keyboard": "^3.7.94",
-    "react-toastify": "^10.0.5",
-    "simple-keyboard": "^3.7.65",
-    "simple-keyboard-layouts": "^3.3.83"
+    "react-toastify": "^10.0.5"
   },
   "devDependencies": {
     "@types/node": "20.11.25",
