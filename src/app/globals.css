@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "prismjs/themes/prism-tomorrow.css";
 
 
 body {
@@ -8,11 +9,40 @@ body {
   overflow-x: hidden;
 }
 
-pre {
-  background-color: #2a2734;
-  color: #f8f8f2;
-  border-radius: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  
+#editor pre{
+	height: 100%;
+	padding-left: 3rem !important;
+}
+
+#editor{
+	counter-reset: line;
+	
+}
+
+#editor > pre {
+  color: rgb(12, 214, 221);
+}
+
+.token.comment {
+	color: rgb(5, 154, 0);
+}
+
+.token.string{
+	color: rgb(255, 208, 0) ;
+}
+
+.indexline{
+    position: absolute;
+	left: 5px;
+	color: #8a8a8a;
+	text-align: right;
+}
+
+.editorArea{
+	overflow-wrap: normal !important;
+	word-break: keep-all !important;
+	outline: none;
+	padding-top: 1rem;
+	padding-left: 3rem !important;
+	white-space: nowrap;
 }

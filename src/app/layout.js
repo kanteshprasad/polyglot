@@ -1,9 +1,9 @@
 import "./globals.css";
 import { Providers } from './providers.tsx'
-import { ColorModeScript } from '@chakra-ui/react'
-import theme from "./theme";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react"
+import { ColorModeScript } from '@chakra-ui/react'
+import theme from './theme'
 
 export const metadata = {
   title: "Polyglot",
@@ -34,9 +34,10 @@ export default function RootLayout({ children }) {
           </Script>
         </>
       )}
-      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+      
       </head>
       <body>
+      <ColorModeScript initialColorMode='dark' />
         <Analytics/>
         <Providers>{children}</Providers>
       </body>

@@ -17,11 +17,11 @@ const ref = useRef(null)
      
         <Flex  mt='15vh' alignItems='center' justifyContent='center' flexDirection={{ base: 'column', md: 'column', lg: 'row' }} height="50%" width="100%" gap='25px' >
        
-          <Heading as={motion.h2} initial={{ x: -100  }} whileInView={{ x: 0  }} transition={{ 'easeIn': 4 }} id='logotext' fontSize={{ base: "60", md: "75", lg: "100" }}>
+          <Heading  id='logotext' fontSize={{ base: "60", md: "75", lg: "100" }}>
             Polyglot
           </Heading>
-          <Box as={motion.div} initial={{ scale:0.25 }} whileInView={{ scale:1 }} transition={{ 'easeIn': 4 }} height={{ base: "5px", md: "5px", lg: "35%" }} width={{ base: "35%", md: "35%", lg: "5px" }} bg={backcolor} borderRadius="25px" />
-          <Text marginLeft={{base: '4', md: '4', lg: '0'}} as={motion.p} initial={{ x: 300 }} whileInView={{ x: 0 }} transition={{ 'easeIn': 4 }}  id='caption' fontWeight='400'> Now, Code in Indian languages <br />
+          <Box  height={{ base: "5px", md: "5px", lg: "35%" }} width={{ base: "35%", md: "35%", lg: "5px" }} bg={backcolor} borderRadius="25px" />
+          <Text marginLeft={{base: '4', md: '4', lg: '0'}}   id='caption' fontWeight='400'> Now, Code in Indian languages <br />
             Our Playground supports:<br /> <br />  <strong>  Kannada, Hindi, Punjabi, <br/> Tamil, Telugu and Odia </strong> </Text>
        
         </Flex>

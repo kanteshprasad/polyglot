@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Box, Button, Text, useToast, HStack , VStack , Flex, } from "@chakra-ui/react";
 import { executeCode } from "../api/api";
 
-const Output = ({ editorRef }) => {
+const Output = ({code}) => {
   const toast = useToast();
   const [output, setOutput] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -39,8 +39,8 @@ const Output = ({ editorRef }) => {
 const runCode = async () => {
   const objKeys = new Set(obj.keys());
 
-  const inputCode = editorRef.current.getValue();
-  const inputArray = inputCode.split(/([[\]{}(),;\s+=\-*])/);
+  
+  const inputArray = code.split(/([[\]{}(),;\s+=\-*])/);
   const sourceCode = inputArray.map(elem => objKeys.has(elem) ? obj.get(elem) : elem).join('');
 
     if (!sourceCode) return;

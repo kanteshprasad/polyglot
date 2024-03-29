@@ -4,7 +4,6 @@ import {  Flex,    Menu,
   MenuList,
   MenuItem, Button, MenuGroup , DarkMode } from "@chakra-ui/react"; 
 
-import Togglemode from "../components/Togglemode";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
@@ -44,7 +43,6 @@ const Navbar = () => {
             
          
      
-      <Togglemode/>
     </Flex>
  
 
