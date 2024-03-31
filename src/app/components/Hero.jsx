@@ -1,65 +1,122 @@
-import {React, useRef} from 'react'
-import {Center,Link, Text, Flex, Button,  Box, VStack, HStack, useColorModeValue ,Heading , IconButton , Icon  } from "@chakra-ui/react";
-import { motion,useInView } from 'framer-motion';
+import { React,useRef, useEffect  } from 'react'
+import { Link, Text, Button, Box, VStack, HStack, LightMode, Tooltip, Center, Grid, GridItem, Flex } from "@chakra-ui/react";
 import { FaInstagram } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import PolyLogo from "../Images/PolyLogo"
+import Typed from 'typed.js';
+
 
 export default function Hero() {
-const backcolor = useColorModeValue("#1a202c", "white")
-const ref = useRef(null)
-  const isInView = useInView(ref)
+  const el = useRef(null);
+  
+  useEffect(() => {
+    const typed = new Typed(el.current, {
+      strings: ['<strong> Kannada, Hindi,  Punjabi, Tamil, Telugu and Odia</strong> '],
+      typeSpeed: 75,
+      loop: true,
+      startDelay:1000,
+    });
+
+    return () => {
+      typed.destroy();
+    };
+  }, []);
+
+ 
+
 
   return (
 
-<>
+    <>
+    <Grid w='90vw' marginLeft='5vw' templateAreas={`"header header header"
+                                       "caption caption caption"
+                                       "lang lang lang"
+                                      "footer footer footer"`}
+        gridTemplateRows={'30vh 15vh 15vh 30vh'}
+        gridTemplateColumns={'30vw 30vw 30vw'}
+        gap='1'
+        color='blackAlpha.700'
+        fontWeight='bold' height='90vh' marginTop='5vh'
+         justifyContent='center'
+         alignItems='center'
+        
+         >
+       <GridItem  area={'header'}   >
+          <Box width={{base:'100%',md:'60%',lg:'50%'}} marginLeft={{base:'0',md:'20%',lg:'25%'}} >
+           <PolyLogo/>
+          </Box>
+       </GridItem>
+
+
       
-        <VStack id='home' width="97vw" height="100vh" >
+
+      <GridItem area='caption'>
+
+       <Box width='100%' >
+       <Text color='white' textAlign='center' className='caption'  fontSize={'x-large'} id='caption'  fontWeight='400'>
+       <strong>  Coding  Made  possible in Indian languages </strong> 
+       </Text>
+
+       </Box>
+      </GridItem>
+
      
-        <Flex  mt='15vh' alignItems='center' justifyContent='center' flexDirection={{ base: 'column', md: 'column', lg: 'row' }} height="50%" width="100%" gap='25px' >
+      <GridItem area='lang'>
+      <Box width='100%' >
+       <Text ref={el} color='#ff725e' textAlign='center'   fontSize={'x-large'}   fontWeight='400'>
+    
+       </Text>
+
+       </Box>
+
+      </GridItem>
+
+      <GridItem  area={'footer'}>
        
-          <Heading  id='logotext' fontSize={{ base: "60", md: "75", lg: "100" }}>
-            Polyglot
-          </Heading>
-          <Box  height={{ base: "5px", md: "5px", lg: "35%" }} width={{ base: "35%", md: "35%", lg: "5px" }} bg={backcolor} borderRadius="25px" />
-          <Text marginLeft={{base: '4', md: '4', lg: '0'}}   id='caption' fontWeight='400'> Now, Code in Indian languages <br />
-            Our Playground supports:<br /> <br />  <strong>  Kannada, Hindi, Punjabi, <br/> Tamil, Telugu and Odia </strong> </Text>
-       
-        </Flex>
 
-
-
-      
-
-        <Center mt={20} width="100%" >
-
-      
-
-          <VStack >
-          
-              <Text  mx={2}> Made by @Kantesh Prasad </Text>
-       
-            <HStack>
-              <Button colorScheme='blue' mr={2}>
-              <FaGithub />
-                <Link ml={2} href='https://github.com/kanteshprasad/polyglot' target="_blank" rel="noopener noreferrer">
-                  Github
+    
+      <LightMode>
+         <VStack width={'100%'}>
+         <Tooltip label="LinkedIn">
+        <Link color={'white'} ml={2} href='https://www.linkedin.com/in/kantesh-prasad-h-k-b8a897260' target="_blank" rel="noopener noreferrer">
+        Made By:  @Kantesh Prasad </Link>
+        </Tooltip>
+          <HStack justifyContent={'center'} mb={20} width="100%">
+             <Center>
+            <Tooltip label="Source on Github">
+             
+              
+                <Link mr={2}   href='https://github.com/kanteshprasad/polyglot' target="_blank" rel="noopener noreferrer">
+                <Button gap={2}  width={'200px'} height={'45px'}  colorScheme='blue'>
+                Source on  <FaGithub/>
+                </Button>
                 </Link>
-              </Button>
-              <Button colorScheme='red' ml={2}>
-              <FaInstagram /> 
-                <Link ml={2} href='https://www.instagram.com/kantesh_prasad/' target="_blank" rel="noopener noreferrer">
-                   Instagram
+                
+              
+            </Tooltip>
+
+            <Tooltip label="Follow Me on Instagram" >
+              
+            
+                <Link width={'100%'}  href='https://www.instagram.com/kantesh_prasad/' target="_blank" rel="noopener noreferrer">
+                <Button gap={2}  width={'200px'} height={'45px'} colorScheme='pink'>
+                Follow Me
+                <FaInstagram />
+                </Button>
                 </Link>
-              </Button>
-            </HStack>
-
-
+               
+            
+            </Tooltip>
+            </Center>
+          </HStack>
           </VStack>
+        </LightMode>
+       
+        </GridItem>
+      </Grid>
 
-        </Center>
-        </VStack>
-   
-</>
+
+    </>
 
 
   )

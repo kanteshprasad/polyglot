@@ -25,7 +25,7 @@ export default function Punjabi() {
 
         <Box>
           <Center>
-            <Heading my={12} > ਪੰਜਾਬੀ  -- Punjabi </Heading>
+            <Heading color='#ff725e' my={12} > ਪੰਜਾਬੀ  -- Punjabi </Heading>
           </Center>
           <VStack width="100%" alignItems='center' gap={3} >
             

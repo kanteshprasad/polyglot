@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import { Box, Spacer, Button, LightMode,DarkMode, VStack,Heading, Flex, Text, HStack, Center } from "@chakra-ui/react";
+import { Box, Spacer, Button, DarkMode, Heading, Flex, Text, HStack, Center } from "@chakra-ui/react";
 import { snippet } from "../dictionary/constants";
 import Output from "./Output";
 import { CopyToClipboard } from 'react-copy-to-clipboard';
@@ -10,7 +10,7 @@ import Prism from "prismjs";
 import { highlight } from 'prismjs/components/prism-core';
 import HorizontalSeparator from "./Seperator.jsx";
 
-const CodeEditor = (language) => {
+const CodeEditor = () => {
   const editorRef = useRef();
   const [copied, setCopied] = useState(false);
   const [code, setCode] = useState(" ");
@@ -51,31 +51,32 @@ const CodeEditor = (language) => {
       
       
   return (
-    <Box id="playground" > 
+    <Box mt={10} id="playground" > 
+        <HorizontalSeparator/>
     <Center>
-       <Heading my={10}> Playground </Heading>
+       <Heading color='tomato' my={5}> Playground </Heading>
     
        </Center>
        <HorizontalSeparator/>
     
-      <Flex mt={5} id="code-editor" width="80vw" mx="10vw" direction={{ base: "column", md: "row", lg: "row" }}  >  
+      <Flex mt={10} id="code-editor" width="80vw" mx="10vw" direction={{ base: "column", md: "row", lg: "row" }}  >  
      
       
 
-        <Box width={{ base: "100%", md: "70%", lg: "70%" }} border={2} height="60vh" borderColor="black" position="relative">
+        <Box mt={5} width={{ base: "100%", md: "70%", lg: "70%" }} border={2} height="60vh" borderColor="black" position="relative">
 
 
     
-         <HStack my={2} width="100%"  justifyContent="center"  >
+         <HStack my={4} width="100%"  justifyContent="center"  >
          
           <CopyToClipboard text={code} onCopy={handleCopy}>
-                <Button colorScheme="blue"  size="md" >
+                <Button bgColor='lightseagreen'  size="md" >
                   {copied ? 'Copied!' : <Text>Copy</Text>}
                 </Button>
               </CopyToClipboard>
 
-              <Button  colorScheme="red" onClick={handleClear}>
-              <Text mx={1} >Clear</Text>  <FontAwesomeIcon icon={faTrash} /> 
+              <Button bgColor={'tomato'} onClick={handleClear}>
+              <Text mx={1} >Clear Code</Text>  
               </Button>    
 
               </HStack>   
@@ -83,7 +84,7 @@ const CodeEditor = (language) => {
         
             
               <DarkMode>
-           <Box  style={{ height: '80%', overflowY: 'auto', border:'1px solid grey' }} >
+           <Box className="editorContainer"  style={{ height: '80%', overflowY: 'auto', border:'1px solid grey' }} >
           
               
           <Editor

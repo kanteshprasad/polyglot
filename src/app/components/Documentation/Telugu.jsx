@@ -17,7 +17,7 @@ export default function Telugu() {
 
   return (
 
-    <Box id='teluguDoc' maxWidth='80vw' ml='10vw' my={10} >
+    <Box id='teluguDoc'  maxWidth='80vw' ml='10vw' my={10} >
       
 
       <VStack width='80%' ml='10%'  >
@@ -25,7 +25,7 @@ export default function Telugu() {
 
         <Box>
           <Center>
-            <Heading my={12} > తెలుగు  -- Telugu </Heading>
+            <Heading color='#ff725e' my={12} > తెలుగు  -- Telugu </Heading>
           </Center>
           <VStack width="100%" alignItems='center' gap={3} >
             

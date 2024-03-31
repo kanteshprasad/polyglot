@@ -25,7 +25,7 @@ export default function Tamil() {
 
         <Box>
           <Center>
-            <Heading my={12} > தமிழ்  -- Tamil </Heading>
+            <Heading color='#ff725e' my={12} > தமிழ்  -- Tamil </Heading>
           </Center>
           <VStack width="100%" alignItems='center' gap={3} >
             

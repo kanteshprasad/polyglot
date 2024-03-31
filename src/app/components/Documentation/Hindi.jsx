@@ -25,7 +25,7 @@ export default function Hindi() {
 
         <Box>
           <Center>
-            <Heading my={12} > हिंदी  -- Hindi </Heading>
+            <Heading color='#ff725e' my={12} > हिंदी  -- Hindi </Heading>
           </Center>
           <VStack width="100%" alignItems='center' gap={3} >
             

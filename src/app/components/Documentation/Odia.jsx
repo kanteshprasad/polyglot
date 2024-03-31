@@ -25,7 +25,7 @@ export default function Odia() {
 
         <Box>
           <Center>
-            <Heading my={12} > ଓଡିଆ  -- Odia </Heading>
+            <Heading color='#ff725e' my={12} > ଓଡିଆ  -- Odia </Heading>
           </Center>
           <VStack width="100%" alignItems='center' gap={3} >
             

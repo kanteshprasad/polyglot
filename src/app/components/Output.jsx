@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Box, Button, Text, useToast, HStack , VStack , Flex, } from "@chakra-ui/react";
 import { executeCode } from "../api/api";
 
+
 const Output = ({code}) => {
   const toast = useToast();
   const [output, setOutput] = useState(null);
@@ -68,9 +69,9 @@ const runCode = async () => {
   };
   return (
     <VStack width="100%" height="100%"  >
-        <HStack>
+        <HStack my={4}>
       <Button
-        colorScheme="green"
+        bgColor='lightseagreen'
        
         isLoading={isLoading}
         onClick={runCode}
@@ -78,8 +79,8 @@ const runCode = async () => {
         Run Code
       </Button>
       
-      <Button  onClick={clearOutput}>
-          Clear Logs
+      <Button bgColor='tomato' onClick={clearOutput}>
+          Clear Output
         </Button>
         
       </HStack> 

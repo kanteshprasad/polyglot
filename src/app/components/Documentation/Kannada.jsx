@@ -25,7 +25,7 @@ export default function Kannada() {
 
         <Box>
           <Center>
-            <Heading my={12} > ಕನ್ನಡ  -- Kannada </Heading>
+            <Heading color='#ff725e'  my={12} > ಕನ್ನಡ  -- Kannada </Heading>
           </Center>
           <VStack width="100%" alignItems='center' gap={3} >
             

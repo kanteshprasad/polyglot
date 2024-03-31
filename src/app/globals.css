@@ -16,6 +16,7 @@ body {
 
 #editor{
 	counter-reset: line;
+
 	
 }
 
@@ -46,4 +47,14 @@ body {
 	padding-left: 3rem !important;
 	white-space: nowrap;
 }
+
+
+.editorContainer{
+	background-color: rgb(35, 35, 35);
+}
+
+pre{
+	background-color: rgb(35, 35, 35);
+}
+
 
