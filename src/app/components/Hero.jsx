@@ -14,7 +14,7 @@ export default function Hero() {
       strings: ['<strong> Kannada, Hindi,  Punjabi, Tamil, Telugu and Odia</strong> '],
       typeSpeed: 75,
       loop: true,
-      startDelay:1000,
+      startDelay:300,
     });
 
     return () => {
