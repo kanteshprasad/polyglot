@@ -52,7 +52,7 @@ const CodeEditor = () => {
       
       
   return (
-    <Box mt={10} height={'100vh'} id="playground" > 
+    <Box mt={10}  id="playground" > 
         <HorizontalSeparator/>
     <Center>
        <Heading color='tomato' my={5}> Playground </Heading>
