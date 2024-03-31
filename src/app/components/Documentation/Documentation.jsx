@@ -36,7 +36,7 @@ const Documentation = () => {
 
   return (
     <>
-       <DarkMode>
+    
       <Box mt={20} id='documentation' width="100vw">
       <Seperator /> 
     <Center>
@@ -51,7 +51,7 @@ const Documentation = () => {
        </Center>
       
       
-      <UnorderedList letterSpacing={2} fontSize='large' width="70vw" ml='15vw' mt={10} mb={20} spacing={2}>
+      <UnorderedList color={'white'} letterSpacing={2} fontSize='large' width="70vw" ml='15vw' mt={10} mb={20} spacing={2}>
         <ListItem><i>Previously, our code editor featured an on-screen keyboard for convenience.</i></ListItem>
         <ListItem><i>However, to streamline the user experience, we've opted to remove this feature.</i></ListItem>
         <ListItem><i>Now, users can utilize <Link href='https://chromewebstore.google.com/detail/google-input-tools/mclkkofklkfljcocdinagocijmpgbhab' isExternal><strong>Google Input Tools extension</strong></Link> on Chrome for desktop users or any multi-language keyboard on mobile devices.</i></ListItem>
@@ -81,7 +81,7 @@ const Documentation = () => {
        </Center>
       
       
-      <UnorderedList letterSpacing={2} fontSize='large' width="70vw" ml='15vw' mt={10} mb={20} spacing={2}>
+      <UnorderedList color={'white'} letterSpacing={2} fontSize='large' width="70vw" ml='15vw' mt={10} mb={20} spacing={2}>
         <ListItem>
           <i>This Code Playground operates by translating code written in your preferred language into <strong><em> JavaScript.</em></strong></i>
         </ListItem>
@@ -100,6 +100,9 @@ const Documentation = () => {
     <Center>
        <Text my={5} color='#ff725e' fontSize='large' > <strong>Select Your Language</strong></Text>
        </Center>
+
+
+       <DarkMode>
       <Flex justifyContent={'center'} width='100%' flexWrap="wrap">
         {['Kannada', 'Hindi', 'Punjabi', 'Telugu', 'Tamil', 'Odia'].map((language) => (
           <Button
@@ -113,13 +116,15 @@ const Documentation = () => {
           </Button>
         ))}
       </Flex>
+      </DarkMode>
 
+      <DarkMode>
       {/* Render selected language component */}
-      <Box>
+      <Box color={'white'}>
         {renderLanguageComponent()}
       </Box>
       </DarkMode>
-    </>
+      </>
   );
 };
 
