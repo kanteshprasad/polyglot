@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Center, HStack,UnorderedList,ListItem,  Heading, Text, Flex, Button, Link } from '@chakra-ui/react';
+import { Box, Center,UnorderedList,ListItem,  Heading, Text, Flex, Button, Link, Tooltip } from '@chakra-ui/react';
 import Seperator from '../Seperator';
 import Kannada from './Kannada';
 import Hindi from './Hindi';
@@ -63,7 +63,18 @@ const Documentation = () => {
       
     
      <Seperator/>
- 
+      
+      <Flex justifyContent={'center'} alignItems={'center'} height={'250px'} width={'100%'}>
+       <Tooltip label='Google input tools Chrome Extension'>
+        <iframe
+        about='Google input tools Chrome Extension'
+          src="https://www.youtube.com/embed/wwODzmWHX8s?rel=0&wmode=opaque&enablejsapi=1&cc_load_policy=1"
+          height={'80%'}
+        />
+        </Tooltip>
+      </Flex>
+      
+      <Seperator/>
 
       <Center>
        <Text my={5} color='#ff725e' fontSize='large' > <strong>Under The Hood</strong></Text>

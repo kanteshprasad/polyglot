@@ -28,7 +28,7 @@ export default function Hero() {
   return (
 
     <>
-    <Grid w='90vw' marginLeft='5vw' templateAreas={`"header header header"
+    <Grid id='home' w='90vw' marginLeft='5vw' templateAreas={`"header header header"
                                        "caption caption caption"
                                        "lang lang lang"
                                       "footer footer footer"`}

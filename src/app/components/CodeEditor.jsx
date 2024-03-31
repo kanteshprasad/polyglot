@@ -1,10 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Box, Spacer, Button, DarkMode, Heading, Flex, Text, HStack, Center } from "@chakra-ui/react";
-import { snippet } from "../dictionary/constants";
+import { CODE_SNIPPETS } from "../dictionary/constants";
 import Output from "./Output";
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {  faTrash } from '@fortawesome/free-solid-svg-icons';
 import Editor from 'react-simple-code-editor';
 import Prism from "prismjs";
 import { highlight } from 'prismjs/components/prism-core';
@@ -14,7 +12,7 @@ const CodeEditor = () => {
   const editorRef = useRef();
   const [copied, setCopied] = useState(false);
   const [code, setCode] = useState(" ");
-  
+  const [selectedlanguage, setLanguage] = useState("kannada");
 
   const handleChange = (newCode) => {
     setCode(newCode);
@@ -35,9 +33,12 @@ const CodeEditor = () => {
 
 
   useEffect(() => {
-    setCode(snippet);
-  }, [snippet]);
+    setCode(CODE_SNIPPETS[selectedlanguage.toLowerCase()]);
+  }, [selectedlanguage]);
   
+  const handleLanguageChange = (language) => {
+    setLanguage(language);
+  };
 
   const highlightindex = (input) =>
     highlight(input, Prism.languages.javascript, "javascript")
@@ -51,27 +52,41 @@ const CodeEditor = () => {
       
       
   return (
-    <Box mt={10} id="playground" > 
+    <Box mt={10} height={'100vh'} id="playground" > 
         <HorizontalSeparator/>
     <Center>
        <Heading color='tomato' my={5}> Playground </Heading>
     
        </Center>
        <HorizontalSeparator/>
+       <Flex mt={5} justifyContent={'center'} width='100%' flexWrap="wrap">
+        {['Kannada', 'Hindi', 'Punjabi', 'Telugu', 'Tamil', 'Odia'].map((language) => (
+          <Button
+            key={language}
+            colorScheme={selectedlanguage === language ? 'red' : 'gray'}  
+            onClick={() => handleLanguageChange(language)}
+            mb={2}
+            mr={2}
+          >
+            {language}
+          </Button>
+        ))}
+      </Flex>
     
-      <Flex mt={10} id="code-editor" width="80vw" mx="10vw" direction={{ base: "column", md: "row", lg: "row" }}  >  
-     
-      
+      <Flex mt={5} id="code-editor" width="80vw" mx="10vw" direction={{ base: "column", md: "row", lg: "row" }}  >  
+        
+  
 
         <Box mt={5} width={{ base: "100%", md: "70%", lg: "70%" }} border={2} height="60vh" borderColor="black" position="relative">
 
+        
 
     
          <HStack my={4} width="100%"  justifyContent="center"  >
          
           <CopyToClipboard text={code} onCopy={handleCopy}>
                 <Button bgColor='lightseagreen'  size="md" >
-                  {copied ? 'Copied!' : <Text>Copy</Text>}
+                  {copied ? 'Copied!' : <Text>Copy Code</Text>}
                 </Button>
               </CopyToClipboard>
 
