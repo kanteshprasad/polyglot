@@ -7,10 +7,16 @@ import { extendTheme } from '@chakra-ui/react'
 
 // 3. extend the theme
 const theme = extendTheme({
-  fonts: {
-    heading: `'Reggae One", system-ui;'`,
-    body: `'Protest Riot", sans-serif;'`,
-  }
+  styles: {
+    global: {
+      html: {
+        bg: "#1a202c", // Set your desired background color here
+      },
+      body:{
+        bg:"#1a202c",
+      }
+    },
+  },
 });
 
 export default theme
