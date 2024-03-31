@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Center,UnorderedList,ListItem,  Heading, Text, Flex, Button, Link, Tooltip } from '@chakra-ui/react';
+import { Box, Center,UnorderedList,ListItem,  Heading, Text, Flex, Button, Link, Tooltip, DarkMode } from '@chakra-ui/react';
 import Seperator from '../Seperator';
 import Kannada from './Kannada';
 import Hindi from './Hindi';
@@ -36,7 +36,7 @@ const Documentation = () => {
 
   return (
     <>
- 
+       <DarkMode>
       <Box mt={20} id='documentation' width="100vw">
       <Seperator /> 
     <Center>
@@ -118,6 +118,7 @@ const Documentation = () => {
       <Box>
         {renderLanguageComponent()}
       </Box>
+      </DarkMode>
     </>
   );
 };
