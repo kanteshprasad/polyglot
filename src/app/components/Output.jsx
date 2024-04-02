@@ -35,6 +35,7 @@ const Output = ({code}) => {
     ["ਝੂਠਾ","false"],  ["ਜਦਕਿ","while"],["ਕਰਦੇ","do"],["ਲਈ","for"],["ਵਿੱਚ","in"], ["ਜ਼ੀਰੋ","null"],["ਅੰਤ","finally"],
  
    
+
   ]);
 
 const runCode = async () => {

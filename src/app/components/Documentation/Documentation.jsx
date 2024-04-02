@@ -52,6 +52,7 @@ const Documentation = () => {
       
       
       <UnorderedList color={'white'} letterSpacing={2} fontSize='large' width="70vw" ml='15vw' mt={10} mb={20} spacing={2}>
+      <ListItem><strong><i>You must use numbers in Western Arabic Numerals only, i.e [1,2,3,4,5,6,7,8,9,0]</i></strong> </ListItem>
         <ListItem><i>Previously, our code editor featured an on-screen keyboard for convenience.</i></ListItem>
         <ListItem><i>However, to streamline the user experience, we've opted to remove this feature.</i></ListItem>
         <ListItem><i>Now, users can utilize <Link href='https://chromewebstore.google.com/detail/google-input-tools/mclkkofklkfljcocdinagocijmpgbhab' isExternal><strong>Google Input Tools extension</strong></Link> on Chrome for desktop users or any multi-language keyboard on mobile devices.</i></ListItem>
