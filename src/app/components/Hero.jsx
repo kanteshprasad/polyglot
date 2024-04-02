@@ -36,7 +36,7 @@ export default function Hero() {
         gridTemplateColumns={'30vw 30vw 30vw'}
         gap='1'
         color='blackAlpha.700'
-        fontWeight='bold' height='90vh' marginTop='5vh'
+        fontWeight='bold' height='90vh' marginTop='15vh'
          justifyContent='center'
          alignItems='center'
         
