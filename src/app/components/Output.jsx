@@ -54,10 +54,10 @@ const runCode = async () => {
     } catch (error) {
       console.log(error);
       toast({
-        title: "An error occurred.",
+        title: "An error occurred, , I was using piston API for the code execution which is no longer available for free from date 15-02-2026, so I will soon update it until then code execution is not available, Thanks",
         description: error.message || "Unable to run code",
         status: "error",
-        duration: 6000,
+        duration: 10000,
       });
     } finally {
       setIsLoading(false);
